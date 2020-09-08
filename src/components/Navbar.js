@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
-const Navbar = class extends React.Component {
+const OldNavbar = class extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,6 @@ const Navbar = class extends React.Component {
       navBarActiveClass: '',
     }
   }
-
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
@@ -93,6 +92,16 @@ const Navbar = class extends React.Component {
       </nav>
     )
   }
+}
+
+const Navbar = () => {
+  return(
+    <nav className='Navbar'>
+      <div className='container'>
+        <h1>Facundo Leites</h1>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar
