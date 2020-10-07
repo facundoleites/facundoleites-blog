@@ -1,42 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+import Layout from "../components/Layout";
+import BlogRoll from "../components/BlogRoll";
+import PoetryRoll from "../components/PoetryRoll";
 
-export const IndexPageTemplate = (
-  {
-    title,
-    heading,
-    subheading,
-    mainpitch,
-    description,
-    intro,
-  }
-) => (
-  <div>
-    <div className='section'>
-      <div className='container'>
-        <h1>
-          {title}
-        </h1>
-        <h3>
-          {subheading}
-        </h3>
-      </div>
-    </div>
-    <section className="section">
-      <div className='container'>
-        <h3 className="has-text-weight-semibold is-size-2">
-          Latest stories
-        </h3>
-        <BlogRoll />
-      </div>
+export const IndexPageTemplate = ({
+  title,
+  heading,
+  subheading,
+  mainpitch,
+  description,
+  intro,
+}) => (
+  <div className="grid sm:grid-cols-3 gap-x-2">
+    <section className="grid grid-cols-2 items-start gap-x-2">
+      <h3 className="font-bold">Poetry</h3>
+      <main>
+        <PoetryRoll />
+      </main>
     </section>
   </div>
-)
+);
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -48,10 +34,10 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-}
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -65,8 +51,8 @@ const IndexPage = ({ data }) => {
         intro={frontmatter.intro}
       />
     </Layout>
-  )
-}
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -74,9 +60,9 @@ IndexPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -114,4 +100,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

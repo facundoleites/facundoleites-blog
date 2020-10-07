@@ -20,13 +20,13 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"]}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"], default: "pt"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
 
   - name: "art"
     label: "Art"
@@ -36,13 +36,29 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"]}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"], default: "pt"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+
+  - name: "poetry"
+    label: "Poetry"
+    folder: "src/pages/poetry"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "poetry"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"], default: "pt"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", required: false, widget: "text"}
+      - {label: "Featured Post", name: "featuredpost", required: false, widget: "boolean"}
+      - {label: "Featured Image", name: "featuredimage", required: false, widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
 
   - name: "design"
     label: "Design"
@@ -52,13 +68,13 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"]}
+      - {label: "Language", name: "language", widget: "select", options: ["en", "es", "pt"], default: "pt"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
 
   - name: "pages"
     label: "Pages"

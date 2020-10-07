@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.Layout {
+  @apply bg-gray-100;
+  @apply text-gray-800;
+}
+.Layout.dark {
+  @apply bg-black;
+  @apply text-gray-400;
+}
